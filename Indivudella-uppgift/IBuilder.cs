@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Indivudella_uppgift
 {
-    interface Interface1
+    public interface IBuilder
     {
+        void BuildShape();
+        void BuildColor();
+        void BuildHabitable();
     }
 }
