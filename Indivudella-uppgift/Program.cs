@@ -4,20 +4,15 @@ namespace Indivudella_uppgift
 {
     class Program
     {
+        public static bool isRunning = true;
         static void Main(string[] args)
         {
-            String input = "";
-            String menu =
-                "[1]Buy Planet\n" +
-                "[2]Sell Planet\n" +
-                "[3]View Planets\n" +
-                "[4]End Turn\n" +
-                "[5]Quit\n";
+            MainMenuFacade mainMenu;
             do
             {
-                Console.WriteLine(menu);
-                input = Console.ReadLine();
-            } while (input != "5");
+                mainMenu = new MainMenuFacade(Console.ReadLine());
+                mainMenu.Operation();
+            } while (isRunning);
         }
     }
 }
