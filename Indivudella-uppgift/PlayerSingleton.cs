@@ -8,7 +8,7 @@ namespace Indivudella_uppgift
     {
         private PlayerSingleton() { }
         private static PlayerSingleton _instance;
-        private int money = 100;
+        private static int money = 100;
 
         public static PlayerSingleton getInstance()
         {
@@ -17,6 +17,11 @@ namespace Indivudella_uppgift
                 _instance = new PlayerSingleton();
             }
             return _instance;
+        }
+        public static int Money
+        {
+            get { return money; }
+            set { money -= value; }
         }
     }
 }

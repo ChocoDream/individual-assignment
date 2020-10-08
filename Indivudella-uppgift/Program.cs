@@ -7,13 +7,17 @@ namespace Indivudella_uppgift
         static void Main(string[] args)
         {
             String input = "";
+            String menu =
+                "[1]Buy Planet\n" +
+                "[2]Sell Planet\n" +
+                "[3]View Planets\n" +
+                "[4]End Turn\n" +
+                "[5]Quit\n";
             do
             {
+                Console.WriteLine(menu);
                 input = Console.ReadLine();
-                Console.WriteLine("User wrote: {0}", input);
-                Planet earth = new Planet(input);
-                Console.WriteLine("Planet {0}", earth.name);
-            } while (input.ToLower() != "quit");
+            } while (input != "5");
         }
     }
 }
