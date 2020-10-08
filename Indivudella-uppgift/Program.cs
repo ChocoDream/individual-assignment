@@ -6,7 +6,14 @@ namespace Indivudella_uppgift
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            String input = "";
+            do
+            {
+                input = Console.ReadLine();
+                Console.WriteLine("User wrote: {0}", input);
+            } while (input.ToLower() != "quit");
+
+            Console.WriteLine("Goodbye");
         }
     }
 }
