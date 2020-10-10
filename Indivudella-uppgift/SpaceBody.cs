@@ -39,5 +39,18 @@ namespace Indivudella_uppgift
 
             Console.WriteLine(information);
         }
+
+        public virtual string toString()
+        {
+            string _resources = "";
+            foreach (string resource in resources)
+            {
+                _resources += resource + ", ";
+            }
+            _resources = _resources.Remove(_resources.Length - 2);
+            return string.Format(
+                "Type: {0} Name: {1} Price: {2} population: {3} \n" +
+                "Resources: {4}\n", type, name, price, population, _resources);
+        }
     }
 }
