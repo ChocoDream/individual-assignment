@@ -23,6 +23,31 @@ namespace Indivudella_uppgift
         {
         }
 
+        public virtual string getType()
+        {
+            return type;
+        }
+
+        public virtual string getName()
+        {
+            return name;
+        }
+
+        public virtual float getPrice()
+        {
+            return price;
+        }
+
+        public virtual string[] getResources()
+        {
+            return resources;
+        }
+
+        public virtual int getPopulation()
+        {
+            return population;
+        }
+
         public virtual void GetInformation()
         {
             string _resources = "";
