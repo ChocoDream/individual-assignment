@@ -12,7 +12,9 @@ namespace Indivudella_uppgift
             switch (type)
             {
                 case "planet":
-                    return new Planet(type, name, price, population, resources);
+                    return new Planet(type, name, price, population: population, resources: resources);
+                case "astroid":
+                    
                 default:
                     return null;
             }

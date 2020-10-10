@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Indivudella_uppgift
+﻿namespace Indivudella_uppgift
 {
-    class Planet : SpaceBody
+    internal class Planet : SpaceBody
     {
-        public Planet(string type, string name, float price, int population, string[] resources) : base(type, name, price, population, resources)
+        public Planet(string type, string name, float price, int population, string[] resources) : base(type, name, price, population: population, resources: resources)
         {
-
         }
 
         public override void GenerateIncome()

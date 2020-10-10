@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Indivudella_uppgift
+﻿namespace Indivudella_uppgift
 {
-    interface ISpaceBody
+    internal interface ISpaceBody
     {
         void GenerateIncome();
 
