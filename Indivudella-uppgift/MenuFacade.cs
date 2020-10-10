@@ -2,7 +2,7 @@
 
 namespace Indivudella_uppgift
 {
-    internal class MenuFacade
+    class MenuFacade
     {
         private string _menu
             = "[1]Open planetStore\n" +
