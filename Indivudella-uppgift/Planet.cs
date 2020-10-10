@@ -4,24 +4,16 @@ using System.Text;
 
 namespace Indivudella_uppgift
 {
-    class Planet
+    class Planet : SpaceBody
     {
-        public string name
-        { get; set; } = "default";
-        private List<object> _properties = new List<object>();
-        public Planet()
+        public Planet(string type, string name, float price, int population, string[] resources) : base(type, name, price, population, resources)
         {
 
         }
-        public void Add(string property)
-        {
-            this._properties.Add(property);
-        }
 
-        public void listProperties()
+        public override void GenerateIncome()
         {
-            string str = string.Empty;
-
+            base.GenerateIncome();
         }
     }
 }
