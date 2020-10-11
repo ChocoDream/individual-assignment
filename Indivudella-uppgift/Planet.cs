@@ -12,7 +12,7 @@
             float income = (population * incomePerPerson);
             for (int i = 0; i < resources.Length; i++)
             {
-                income += 100;
+                income += 80;
             }
             PlayerSingleton.AddMoney(income);
         }
