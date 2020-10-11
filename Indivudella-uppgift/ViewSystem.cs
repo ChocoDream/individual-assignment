@@ -34,7 +34,14 @@ namespace Indivudella_uppgift
             {
                 case "1":
                     Console.WriteLine("Write name of SpaceBody you wish to inspect");
-
+                    ITarget target = new SpaceBodyAdapter(Console.ReadLine());
+                    if(target.Convert() != -1)
+                    {
+                        PlayerSingleton.GetSpaceBody(target.Convert()).GetInformation();
+                    }else
+                    {
+                        Console.WriteLine("Cannot find Spacebody");
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid option");
