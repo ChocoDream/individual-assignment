@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Indivudella_uppgift
 {
@@ -45,7 +46,7 @@ namespace Indivudella_uppgift
                 Console.WriteLine("[{0}] {1}", i, storeSpaceBodies[i].toString());
             }
             PlayerSingleton.CheckCurrency();
-            Console.WriteLine("Write what you want to buy");
+            Console.WriteLine("What spacebody do you want to buy? (Write with number)");
             input = Console.ReadLine();
             if (int.TryParse(input, out int option))
             {
@@ -54,12 +55,12 @@ namespace Indivudella_uppgift
                     Console.WriteLine("Doesn't exist");
                     return;
                 }
-                if (storeSpaceBodies[option].getPrice() > PlayerSingleton.GetMoney())
+                else if (storeSpaceBodies[option].getPrice() > PlayerSingleton.GetMoney())
                 {
                     Console.WriteLine("Can't afford");
                     return;
                 }
-                if (storeSpaceBodies[option].getPrice() <= PlayerSingleton.GetMoney())
+                else if (storeSpaceBodies[option].getPrice() <= PlayerSingleton.GetMoney())
                 {
                     PlayerSingleton.AddSpaceBody(storeSpaceBodies[option]);
                 }
@@ -68,11 +69,36 @@ namespace Indivudella_uppgift
 
         private void Sell()
         {
-            if (PlayerSingleton.GetSpaceBodies().Count == 0)
+            List<SpaceBody> _spaceBodies = PlayerSingleton.GetSpaceBodies();
+            if (_spaceBodies.Count == 0)
             {
-                Console.WriteLine("You got nothing to sell");
+                Console.WriteLine("You got nothing to sell\n");
                 return;
             };
+            Console.WriteLine("Player's Spacebodies: ");
+            for (int i = 0; i < _spaceBodies.Count; i++)
+            {
+                Console.WriteLine("[{0}] {1}", i,
+                string.Format("Name: {0}, Price: {1}", _spaceBodies[i].getName(), _spaceBodies[i].getPrice()));
+            }
+            Console.WriteLine("\nWhat Spacebody do you want to sell? (Write with number)");
+            input = Console.ReadLine();
+            if (int.TryParse(input, out int option))
+            {
+                if (_spaceBodies.Count < option)
+                {
+                    Console.WriteLine("Doesn't exist");
+                    return;
+                }
+                else
+                {
+                    SpaceBody soldItem = _spaceBodies[option];
+                    PlayerSingleton.RemoveSpaceBody(option);
+                    double sellingPrice = Math.Round((soldItem.getPrice() * 0.80), 2);
+                    PlayerSingleton.AddMoney(sellingPrice);
+                    Console.WriteLine("Sold {0} for {1}", soldItem.getName(), sellingPrice);
+                }
+            }
         }
     }
 }

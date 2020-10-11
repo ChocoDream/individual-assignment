@@ -31,14 +31,14 @@ namespace Indivudella_uppgift
             return money <= 0 ? true : false;
         }
 
-        public static void AddMoney(float _money)
+        public static void AddMoney(double _money)
         {
             money += _money;
         }
 
-        public static void Pay(float cost)
+        public static void PayCost(double _money)
         {
-            money -= cost;
+            money -= _money;
         }
 
         public static void CheckCurrency()
@@ -51,9 +51,19 @@ namespace Indivudella_uppgift
             return spaceBodies;
         }
 
+        public static SpaceBody GetSpaceBody(int index)
+        {
+            return (index <= spaceBodies.Count - 1 && index >= 0) ? spaceBodies[index] : null;
+        }
+
         public static void AddSpaceBody(SpaceBody spaceBody)
         {
             spaceBodies.Add(spaceBody);
+        }
+
+        public static void RemoveSpaceBody(int index)
+        {
+            spaceBodies.RemoveAt(index);
         }
     }
 }
