@@ -18,6 +18,7 @@ namespace Indivudella_uppgift
         {
             ShopSystem shop = new ShopSystem();
             ViewSystem view = new ViewSystem();
+            TurnSystem turn = new TurnSystem();
             bool isRunning = true;
             string input = "";
             do
@@ -36,7 +37,7 @@ namespace Indivudella_uppgift
                         break;
 
                     case "3":
-
+                        turn.nextTurn();
                         break;
 
                     case "5":
