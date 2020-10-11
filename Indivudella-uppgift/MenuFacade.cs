@@ -2,7 +2,7 @@
 
 namespace Indivudella_uppgift
 {
-    class MenuFacade
+    internal class MenuFacade
     {
         private string _menu
             = "[1]Open planetStore\n" +
@@ -17,6 +17,7 @@ namespace Indivudella_uppgift
         public void MainMenu()
         {
             ShopSystem shop = new ShopSystem();
+            ViewSystem view = new ViewSystem();
             bool isRunning = true;
             string input = "";
             do
@@ -30,7 +31,7 @@ namespace Indivudella_uppgift
                         break;
 
                     case "2":
-
+                        view.Menu();
                         break;
 
                     case "3":
