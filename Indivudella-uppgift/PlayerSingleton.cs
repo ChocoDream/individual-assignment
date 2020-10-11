@@ -12,6 +12,11 @@ namespace Indivudella_uppgift
         private static double money = 100;
         private static List<SpaceBody> spaceBodies = new List<SpaceBody>();
 
+        public static double GetMoney()
+        {
+            return money;
+        }
+
         public static PlayerSingleton GetInstance()
         {
             if (_instance == null)
@@ -21,7 +26,7 @@ namespace Indivudella_uppgift
             return _instance;
         }
 
-        public static bool isBankrupt()
+        public static bool IsBankrupt()
         {
             return money <= 0 ? true : false;
         }
@@ -38,12 +43,17 @@ namespace Indivudella_uppgift
 
         public static void CheckCurrency()
         {
-            System.Console.WriteLine("Player's Money: {0}\n", money);
+            System.Console.WriteLine("Player's Money: {0}", money);
         }
 
-        public static List<SpaceBody> getSpaceBodies()
+        public static List<SpaceBody> GetSpaceBodies()
         {
             return spaceBodies;
+        }
+
+        public static void AddSpaceBody(SpaceBody spaceBody)
+        {
+            spaceBodies.Add(spaceBody);
         }
     }
 }
