@@ -6,14 +6,21 @@ namespace Indivudella_uppgift
 {
     static class SpaceBodyFactory
     {
+        public enum TYPE{
+            PLANET,
+            ASTEROID
+        }
 
-        public static SpaceBody MakeSpaceBody(string type, string name, float price, string[] resources, int population = 0)
+        public static SpaceBody MakeSpaceBody(TYPE Type, string name, float price, string[] resources, int population = 0)
         {
-            switch (type.ToLower())
+            string type = "";
+            switch (Type)
             {
-                case "planet":
+                case TYPE.PLANET:
+                    type = "planet";
                     return new Planet(type, name, price, resources: resources, population: population);
-                case "asteroid":
+                case TYPE.ASTEROID:
+                    type = "asteroid";
                     return new Asteroid(type, name, price, resources: resources);
                 default:
                     return null;

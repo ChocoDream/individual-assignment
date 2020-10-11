@@ -8,11 +8,11 @@ namespace Indivudella_uppgift
             "[2]Sell Spacebody\n";
 
         private SpaceBody[] storeSpaceBodies = new SpaceBody[] {
-             SpaceBodyFactory.MakeSpaceBody(type: "Planet", name: "Lazytown", 500, population: 20, resources: new string[] {"Robbie Rotten", "Pranks", "Laziness"}),
-             SpaceBodyFactory.MakeSpaceBody(type: "Asteroid", name: "Minecraftiod", 60, resources: new string[] {"Creepers", "Gunpowder", "Diamonds", "Iron", "Ghasts"}),
-             SpaceBodyFactory.MakeSpaceBody(type: "Asteroid", name: "Terrarium", 60, resources: new string[] {"Metroidite", "Copper", "Steel", "Magmanite", "Demons"}),
-             SpaceBodyFactory.MakeSpaceBody(type: "Planet", name: "Earth", 2500, population: 20000, resources: new string[] {"Dirt", "Magma", "Water", "Iron", "Humans"}),
-             SpaceBodyFactory.MakeSpaceBody(type: "Planet", name: "Mars", 5000, population: 20, resources: new string[] {"Edun Musk", "Rocks", "Aliens"})
+             SpaceBodyFactory.MakeSpaceBody(Type: SpaceBodyFactory.TYPE.PLANET, name: "Lazytown", 500, population: 20, resources: new string[] {"Robbie Rotten", "Pranks", "Laziness"}),
+             SpaceBodyFactory.MakeSpaceBody(Type: SpaceBodyFactory.TYPE.ASTEROID, name: "Minecraftiod", 60, resources: new string[] {"Creepers", "Gunpowder", "Diamonds", "Iron", "Ghasts"}),
+             SpaceBodyFactory.MakeSpaceBody(Type: SpaceBodyFactory.TYPE.ASTEROID, name: "Terrarium", 60, resources: new string[] {"Metroidite", "Copper", "Steel", "Magmanite", "Demons"}),
+             SpaceBodyFactory.MakeSpaceBody(Type: SpaceBodyFactory.TYPE.PLANET, name: "Earth", 2500, population: 20000, resources: new string[] {"Dirt", "Magma", "Water", "Iron", "Humans"}),
+             SpaceBodyFactory.MakeSpaceBody(Type: SpaceBodyFactory.TYPE.PLANET, name: "Mars", 5000, population: 20, resources: new string[] {"Edun Musk", "Rocks", "Aliens"})
         };
 
         private string input = "";
@@ -47,23 +47,22 @@ namespace Indivudella_uppgift
             PlayerSingleton.CheckCurrency();
             Console.WriteLine("Write what you want to buy");
             input = Console.ReadLine();
-            if(int.TryParse(input, out int option))
+            if (int.TryParse(input, out int option))
             {
-                if(storeSpaceBodies.Length < option)
+                if (storeSpaceBodies.Length < option)
                 {
                     Console.WriteLine("Doesn't exist");
                     return;
                 }
-                if(storeSpaceBodies[option].getPrice() > PlayerSingleton.GetMoney())
+                if (storeSpaceBodies[option].getPrice() > PlayerSingleton.GetMoney())
                 {
                     Console.WriteLine("Can't afford");
                     return;
                 }
-                if(storeSpaceBodies[option].getPrice() <= PlayerSingleton.GetMoney())
+                if (storeSpaceBodies[option].getPrice() <= PlayerSingleton.GetMoney())
                 {
                     PlayerSingleton.AddSpaceBody(storeSpaceBodies[option]);
                 }
-
             }
         }
 
