@@ -53,7 +53,7 @@ namespace Indivudella_uppgift
             {
                 _resources += resource;
             }
-            string information = string.Format("Information on {1}" +
+            string information = string.Format("Information on {1}\n" +
                 "type: {0}\n" +
                 "name: {1}\n" +
                 "price: {2}\n" +
