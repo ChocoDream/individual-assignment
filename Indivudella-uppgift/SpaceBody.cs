@@ -57,7 +57,7 @@ namespace Indivudella_uppgift
             string information = string.Format("Information on {1}\n" +
                 "type: {0}\n" +
                 "name: {1}\n" +
-                "price: {2}\n" +
+                "price: {2} $\n" +
                 "population: {3}\n" +
                 "resources: {4}\n", type, name, price, population, _resources);
 
@@ -73,7 +73,7 @@ namespace Indivudella_uppgift
             }
             _resources = _resources.Remove(_resources.Length - 2);
             return string.Format(
-                "Type: {0} Name: {1} Price: {2} population: {3} \n" +
+                "Type: {0}, Name: {1}\t Price: {2} $\t population: {3} \n" +
                 "Resources: {4}\n", type, name, price, population, _resources);
         }
     }

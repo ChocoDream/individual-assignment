@@ -63,6 +63,8 @@ namespace Indivudella_uppgift
                 else if (storeSpaceBodies[option].getPrice() <= PlayerSingleton.GetMoney())
                 {
                     PlayerSingleton.AddSpaceBody(storeSpaceBodies[option]);
+                    PlayerSingleton.PayCost(storeSpaceBodies[option].getPrice());
+                    Console.WriteLine("Bought {0} for {1} $", storeSpaceBodies[option].getName(), storeSpaceBodies[1].getPrice());
                 }
             }
         }
@@ -79,7 +81,7 @@ namespace Indivudella_uppgift
             for (int i = 0; i < _spaceBodies.Count; i++)
             {
                 Console.WriteLine("[{0}] {1}", i,
-                string.Format("Name: {0}, Price: {1}", _spaceBodies[i].getName(), _spaceBodies[i].getPrice()));
+                string.Format("Name: {0}, Price: {1} $", _spaceBodies[i].getName(), _spaceBodies[i].getPrice()));
             }
             Console.WriteLine("\nWhat Spacebody do you want to sell? (Write with number)");
             input = Console.ReadLine();
@@ -96,7 +98,7 @@ namespace Indivudella_uppgift
                     PlayerSingleton.RemoveSpaceBody(option);
                     double sellingPrice = Math.Round((soldItem.getPrice() * 0.80), 2);
                     PlayerSingleton.AddMoney(sellingPrice);
-                    Console.WriteLine("Sold {0} for {1}", soldItem.getName(), sellingPrice);
+                    Console.WriteLine("Sold {0} for {1} $", soldItem.getName(), sellingPrice);
                 }
             }
         }

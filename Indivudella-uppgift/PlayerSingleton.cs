@@ -43,7 +43,7 @@ namespace Indivudella_uppgift
 
         public static void CheckCurrency()
         {
-            System.Console.WriteLine("Player's Money: {0}", money);
+            System.Console.WriteLine("Player's Money: {0} $", money);
         }
 
         public static List<SpaceBody> GetSpaceBodies()
