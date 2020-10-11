@@ -8,7 +8,7 @@
 
         public override void GenerateIncome()
         {
-            base.GenerateIncome();
+
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Indivudella_uppgift
 {
-    internal class SpaceBody : ISpaceBody
+    abstract class SpaceBody : ISpaceBody
     {
         protected string name;
         protected string type;
@@ -19,9 +19,7 @@ namespace Indivudella_uppgift
             this.population = population;
         }
 
-        public virtual void GenerateIncome()
-        {
-        }
+        public abstract void GenerateIncome();
 
         public virtual string getType()
         {

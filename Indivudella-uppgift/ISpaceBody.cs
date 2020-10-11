@@ -3,7 +3,5 @@
     internal interface ISpaceBody
     {
         void GenerateIncome();
-
-        void GetInformation();
     }
 }
