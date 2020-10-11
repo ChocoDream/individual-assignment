@@ -10,7 +10,7 @@ namespace Indivudella_uppgift
 
         private string input = "";
 
-        private void ShowMenu()
+        private void showMenu()
         {
             if (PlayerSingleton.GetSpaceBodies().Count > 0)
             {
@@ -27,7 +27,7 @@ namespace Indivudella_uppgift
 
         public void Menu()
         {
-            ShowMenu();
+            showMenu();
             if (PlayerSingleton.GetSpaceBodies().Count == 0) return; // Returns back to main menu if no SpaceBodies in PlayerSingleton can be found, placed this first to skip an if/else
             input = Console.ReadLine();
             switch (input)
