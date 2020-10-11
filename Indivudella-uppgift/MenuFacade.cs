@@ -22,6 +22,7 @@ namespace Indivudella_uppgift
             string input = "";
             do
             {
+                PlayerSingleton.CheckCurrency();
                 Console.WriteLine(_menu);
                 input = Console.ReadLine();
                 switch (input)
