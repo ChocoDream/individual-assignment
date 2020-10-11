@@ -35,14 +35,16 @@ namespace Indivudella_uppgift
                 case "1":
                     Console.WriteLine("Write name of SpaceBody you wish to inspect");
                     ITarget target = new SpaceBodyAdapter(Console.ReadLine());
-                    if(target.Convert() != -1)
+                    if (target.Convert() != -1)
                     {
                         PlayerSingleton.GetSpaceBody(target.Convert()).GetInformation();
-                    }else
+                    }
+                    else
                     {
                         Console.WriteLine("Cannot find Spacebody");
                     }
                     break;
+
                 default:
                     Console.WriteLine("Invalid option");
                     break;
@@ -59,15 +61,6 @@ namespace Indivudella_uppgift
             }
             _spacebodies = _spacebodies.Remove(_spacebodies.Length - 2);
             return _spacebodies;
-        }
-
-        private void showSpaceBodiesInList()
-        {
-            int index = 0;
-            foreach (SpaceBody spaceBody in PlayerSingleton.GetSpaceBodies())
-            {
-                Console.WriteLine("[{0}] {1}", index++, spaceBody.getName());
-            }
         }
     }
 }
