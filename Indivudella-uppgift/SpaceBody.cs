@@ -2,7 +2,7 @@
 
 namespace Indivudella_uppgift
 {
-    abstract class SpaceBody : ISpaceBody
+    internal abstract class SpaceBody : ISpaceBody
     {
         protected string name;
         protected string type;
@@ -51,8 +51,9 @@ namespace Indivudella_uppgift
             string _resources = "";
             foreach (string resource in resources)
             {
-                _resources += resource;
+                _resources += resource + ", ";
             }
+            _resources = _resources.Remove(_resources.Length - 2);
             string information = string.Format("Information on {1}\n" +
                 "type: {0}\n" +
                 "name: {1}\n" +
