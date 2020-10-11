@@ -11,7 +11,7 @@
             float income = 0;
             for (int i = 0; i < resources.Length; i++)
             {
-                income += 50;
+                income += 100;
             }
             PlayerSingleton.AddMoney(income);
         }
@@ -21,7 +21,7 @@
             string _resources = "";
             foreach (string resource in resources)
             {
-                _resources += resource + ", ";
+                _resources += (resource + ", ");
             }
             _resources = _resources.Remove(_resources.Length - 2);
             return string.Format(

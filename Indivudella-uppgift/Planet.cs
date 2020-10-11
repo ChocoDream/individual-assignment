@@ -8,7 +8,13 @@
 
         public override void GenerateIncome()
         {
-
+            float incomePerPerson = 12.5f;
+            float income = (population * incomePerPerson);
+            for (int i = 0; i < resources.Length; i++)
+            {
+                income += 100;
+            }
+            PlayerSingleton.AddMoney(income);
         }
     }
 }
